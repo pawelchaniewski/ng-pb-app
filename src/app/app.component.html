@@ -1,2 +1,13 @@
-<app-test-item></app-test-item>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-lg-2">
+      <app-sidebar
+        (myClick)="inboxTypeSelected($event)"
+        (newEmail)="newEmailEvent($event)"></app-sidebar>
+    </div>
+    <div class="col-12 col-lg-10">
+      <app-mail-content [inboxType]="inboxType"></app-mail-content>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

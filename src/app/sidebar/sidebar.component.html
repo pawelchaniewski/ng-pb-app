@@ -1,0 +1,12 @@
+<h3>sidebar</h3>
+<div class="sidebar">
+<p>
+  <button (click)="composeEmail()" type="button" class="btn btn-outline-primary">compose</button>
+</p>
+
+<ul>
+  <li *ngFor="let item of inboxTypes; let i=index">
+    <a href="#" (click)="selectInboxType(i)">{{ item }}</a>
+  </li>
+</ul>
+</div>
