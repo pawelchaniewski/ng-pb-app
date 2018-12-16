@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule, NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestModule } from './test/test.module';
+import { TestItemComponent } from './test-item/test-item.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MailContentComponent } from './mail-content/mail-content.component';
 import { InboxComponent } from './inbox/inbox.component';
@@ -12,9 +13,12 @@ import { DraftsComponent } from './drafts/drafts.component';
 import { SentComponent } from './sent/sent.component';
 import { AllMailComponent } from './all-mail/all-mail.component';
 
+const routes: Routes = [];
+
 @NgModule({
   declarations: [
     AppComponent,
+    TestItemComponent,
     SidebarComponent,
     MailContentComponent,
     InboxComponent,
@@ -24,11 +28,11 @@ import { AllMailComponent } from './all-mail/all-mail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    TestModule,
-    NgbModule,
-    NgbButtonsModule
+    FormsModule,
+    RouterModule.forRoot(routes),
+    NgbModule.forRoot()
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
