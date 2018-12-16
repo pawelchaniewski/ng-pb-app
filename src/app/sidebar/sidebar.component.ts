@@ -4,7 +4,7 @@ import { InboxType } from '../inbox-type.enum';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
   public inboxTypes: Array<string>;
@@ -35,7 +35,7 @@ export class SidebarComponent implements OnInit {
   // wybor skrzynki
   selectInboxType(index: number) {
     const inboxType = <InboxType>index;
-    console.log('select:', index, InboxType[index]);
+    console.log('select:', index);
     this.myClick.emit(inboxType);
 
     /*

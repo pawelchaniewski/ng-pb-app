@@ -1,8 +1,8 @@
 <h3>mail content</h3>
 <p>
-  InboxType: {{ inboxType }} {{ InboxType[inboxType] }}
+  InboxType: {{ inboxType }}
 </p>
-<app-inbox *ngIf="inboxType === InboxType.Inbox"></app-inbox>
-<app-drafts *ngIf="inboxType === InboxType.Drafts"></app-drafts>
-<app-sent *ngIf="inboxType === InboxType.Sent"></app-sent>
-<app-all-mail *ngIf="inboxType === InboxType.AllMail"></app-all-mail>
+<app-inbox *ngIf="inboxType === 0"></app-inbox>
+<app-drafts *ngIf="inboxType === 1"></app-drafts>
+<app-sent *ngIf="inboxType === 2"></app-sent>
+<app-all-mail *ngIf="inboxType === 3"></app-all-mail>
