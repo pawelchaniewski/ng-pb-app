@@ -24,7 +24,9 @@ export class SidebarComponent implements OnInit {
     ];
   }
 
-  selectInboxType(index: InboxType) {
+  // wybor skrzynki
+  selectInboxType(index: number) {
+    // console.log('wybor skrzynki:', index, InboxType[index]);
     this.inboxTypeSelected.emit(index);
   }
 }

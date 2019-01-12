@@ -15,8 +15,8 @@ export enum InboxType {
 export class AppComponent {
   public parentInboxType: InboxType = InboxType.Inbox;
 
-  public selectedType(index: InboxType) {
-    console.log(index, InboxType[index]);
+  public selectedType(index: number) {
     this.parentInboxType = index;
+    console.log('wybor skrzynki:', index, InboxType[index]);
   }
 }

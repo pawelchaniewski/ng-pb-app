@@ -18,6 +18,7 @@ export class MailContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.number);
   }
 
 }
