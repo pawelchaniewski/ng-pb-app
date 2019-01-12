@@ -1,0 +1,11 @@
+<!-- <p>
+  mail-content works: {{ childInboxType }},
+  {{ InboxType[childInboxType] }}
+</p> -->
+<app-inbox *ngIf="childInboxType === InboxType.Inbox">
+</app-inbox>
+<app-drafts *ngIf="childInboxType === InboxType.Drafts">
+</app-drafts>
+<p *ngIf="childInboxType > InboxType.Drafts">
+  Undefined box
+</p>

@@ -4,10 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestModule } from './test/test.module';
+import { MailContentComponent } from './mail-content/mail-content.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { DraftsComponent } from './drafts/drafts.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MailContentComponent,
+    SidebarComponent,
+    InboxComponent,
+    DraftsComponent
   ],
   imports: [
     BrowserModule,

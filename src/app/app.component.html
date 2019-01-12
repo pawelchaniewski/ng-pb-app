@@ -1,2 +1,7 @@
-<app-test-item></app-test-item>
-<router-outlet></router-outlet>
+<!-- <app-test-item></app-test-item> -->
+<!-- <router-outlet></router-outlet> -->
+<app-sidebar (inboxTypeSelected)="selectedType($event)"></app-sidebar>
+<app-mail-content
+    [childInboxType]="parentInboxType"
+    [number]="13">
+</app-mail-content>

@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let item of inboxTypes; let i=index">
+    <a href="#" (click)="selectInboxType(i)">
+      {{i}}: {{ item }}
+    </a>
+  </li>
+</ul>
