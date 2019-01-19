@@ -12,6 +12,7 @@ import { InboxComponent } from './inbox/inbox.component';
 import { DraftsComponent } from './drafts/drafts.component';
 import { SentComponent } from './sent/sent.component';
 import { AllMailComponent } from './all-mail/all-mail.component';
+import { EmailService } from './email';
 
 const routes: Routes = [];
 
@@ -33,7 +34,9 @@ const routes: Routes = [];
     NgbModule.forRoot()
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [
+    EmailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
