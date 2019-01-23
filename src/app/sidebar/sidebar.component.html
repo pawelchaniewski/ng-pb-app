@@ -4,8 +4,9 @@
     <button (click)="composeEmail()" type="button" class="btn btn-outline-primary send-btn">compose</button>
   </div>
   <ul class="nav flex-column">
-    <li *ngFor="let item of inboxTypes; let i=index" class="toc-item">
-      <a href="#" (click)="selectInboxType(i)" class="toc-link">{{ item }}</a>
+    <li *ngFor="let item of inboxTypes; let i=index" class="toc-item"  >
+      <a href="#" *ngIf="i === selected" (click)="selectInboxType(i)" class="toc-link"><b> {{ item }} </b> </a>
+      <a href="#" *ngIf="i !== selected" (click)="selectInboxType(i)" class="toc-link">{{ item }} </a>
     </li>
   </ul>
 </nav>
