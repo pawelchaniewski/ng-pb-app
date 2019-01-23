@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { InboxType } from './inbox-type.enum';
+import { EmailService } from './email';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ export class AppComponent {
   @ViewChild('content')
   content: ElementRef;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(
+    private modalService: NgbModal,
+    private emailService: EmailService
+  ) { }
 
   public inboxTypeSelected(event: InboxType) {
     this.inboxType = event;
@@ -26,5 +30,11 @@ export class AppComponent {
 
     this.title = title;
     this.modalService.open(this.content, { size: 'lg' });
+  }
+
+  public sendMessage(modal) {
+    this.emailService.sentEmail(this.title, 'content');
+    console.log('message sent');
+    modal.close();
   }
 }

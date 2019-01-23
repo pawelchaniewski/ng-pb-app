@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { InboxType } from '../inbox-type.enum';
-import { InboxEmailMessage, EmailService } from 'src/email';
+import { InboxEmailMessage, EmailService } from '../email';
 
 @Component({
   selector: 'app-mail-content',

@@ -1,7 +1,9 @@
-<!-- <ul>
-  <li *ngFor="let message of inboxMessages" >{{ message.title }}</li>
-</ul>   -->
-  
+<ul>
+    <li *ngFor="let item of inboxMessages">
+    {{ item.title }}<br />
+    {{ item.content }}
+  </li>
+</ul>
 
 <ngb-accordion [closeOthers]="true" activeIds="0" (panelChange)="toggleAccordian($event)">
   <ngb-panel id="{{ i }}" *ngFor="let message of inboxMessages; let i = index">
@@ -15,4 +17,6 @@
   </ngb-panel>
 </ngb-accordion>
   
+
+
 
