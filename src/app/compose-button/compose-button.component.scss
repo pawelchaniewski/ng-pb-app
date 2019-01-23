@@ -1,0 +1,10 @@
+.compose {
+  &__wrapper {
+    margin: 0.25rem 1.5rem;
+  }
+  &__button {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
