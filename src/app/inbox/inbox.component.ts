@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InboxEmailMessage, EmailService } from '../email';
+import { InboxEmailMessage, EmailService } from 'src/email';
 
 @Component({
   selector: 'app-inbox',
@@ -9,18 +9,12 @@ import { InboxEmailMessage, EmailService } from '../email';
 export class InboxComponent implements OnInit {
   inboxMessages: InboxEmailMessage[] = [];
 
-  constructor(
-    public emailService: EmailService
-  ) { }
+  constructor(private emailService: EmailService) {}
 
   ngOnInit() {
-    console.log('InboxComponent.ngOnInit()');
-
-    this.emailService.emailSentEvent.subscribe((title) => {
-      console.log('emailService.emailSentEvent', title);
-    });
-
-    this.emailService.getInboxMessages()
-      .then((result) => this.inboxMessages = result);
+    this.emailService
+      .getMessages()
+      .then(result => (this.inboxMessages = result));
   }
+
 }

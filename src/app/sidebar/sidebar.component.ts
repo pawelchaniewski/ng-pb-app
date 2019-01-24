@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { InboxType } from '../inbox-type.enum';
+import { EmailAppProperties } from '../properties.enum';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,6 +8,8 @@ import { InboxType } from '../inbox-type.enum';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+
+  constructor() { }
   public inboxTypes: Array<string>;
 
   // InboxTypeSelected
@@ -15,12 +18,12 @@ export class SidebarComponent implements OnInit {
 
   @Output()
   newEmail: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor() { }
+    private defaultTitle: string;
 
   ngOnInit() {
     this.inboxTypes = [
       'inbox',
+      'calendar',
       'drafts',
       'sent',
       'all mail'
@@ -29,7 +32,11 @@ export class SidebarComponent implements OnInit {
 
   // nowy mail
   composeEmail() {
-    this.newEmail.emit('i\'m new');
+    const defaultEmailTitle: object = {
+          defaultTitle: EmailAppProperties.DEFAULT_MESSAGE_TITLE,
+          defaultMessage: EmailAppProperties.DEFAULT_MESSAGE_CONTENT
+    };
+    this.newEmail.emit(defaultEmailTitle);
   }
 
   // wybor skrzynki
