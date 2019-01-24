@@ -1,38 +1,9 @@
 <nav class="toc">
   <h3>sidebar</h3>
-  <app-compose-button (newEmail)="newEmailEvent($event)"> </app-compose-button>
+  <app-compose-button> </app-compose-button>
   <ul class="nav flex-column">
     <li *ngFor="let item of inboxTypes; let i = index" class="toc-item">
       <a href="#" (click)="selectInboxType(i)" class="toc-link">{{ item }}</a>
     </li>
   </ul>
 </nav>
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">New message</h4>
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p><input type="text" [(ngModel)]="title" /></p>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-light"
-      (click)="modal.close('Close click')"
-    >
-      Close
-    </button>
-    <button type="button" class="btn btn-danger" (click)="sendMessage(modal)">
-      Send
-    </button>
-  </div>
-</ng-template>
