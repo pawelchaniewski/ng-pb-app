@@ -1,8 +1,5 @@
-<nav class="toc">
-  <h3>sidebar</h3>
-  <ul class="nav flex-column">
-    <li *ngFor="let item of inboxTypes; let i=index" class="toc-item">
-      <a href="#" (click)="selectInboxType(i)" class="toc-link">{{ item }}</a>
-    </li>
-  </ul>
-</nav>
+<ul class="nav flex-column">
+  <li *ngFor="let item of inboxTypes; let i=index" class="toc-item">
+    <a href="#" (click)="selectInboxType(i)" class="toc-link">{{ item }}</a>
+  </li>
+</ul>
