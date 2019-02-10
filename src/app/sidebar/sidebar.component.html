@@ -1,5 +1,7 @@
 <ul class="nav flex-column">
   <li *ngFor="let item of inboxTypes; let i=index" class="toc-item">
-    <a href="#" (click)="selectInboxType(i)" class="toc-link">{{ item }}</a>
+      <a href="#" [class.bold]="i === selected" (click)="selectInboxType(i)" class="toc-link">
+        {{ item }}
+      </a>
   </li>
 </ul>

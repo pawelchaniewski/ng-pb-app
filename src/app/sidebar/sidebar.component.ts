@@ -9,6 +9,7 @@ import { EmailAppProperties } from '../properties.enum';
 })
 export class SidebarComponent implements OnInit {
   public inboxTypes: Array<string>;
+  public selected = 0;
 
   // InboxTypeSelected
   @Output()
@@ -26,9 +27,9 @@ export class SidebarComponent implements OnInit {
   // wybor skrzynki
   selectInboxType(index: number) {
     const inboxType = <InboxType>index;
+    this.selected = index;
     console.log('select:', index, InboxType[index]);
     this.myClick.emit(inboxType);
-
     /*
     switch (inboxType) {
       case InboxType.Inbox:
